@@ -22,6 +22,10 @@ html{
   scroll-behavior: smooth;
 }
 
+body{
+  height: 200rem;
+}
+
 section{
   padding: 1.5rem 9%;
 }
@@ -86,6 +90,11 @@ header .search-container{
   display: flex;
   align-items: center;
   z-index: 1001;
+  clip-path: polygon(0 0, 100% 0, 100% 0,0 0);
+}
+
+header .search-container.active{
+  clip-path: polygon(0 0,100% 0, 100% 100%, 0 100%);
 }
 
 header .search-container #search-bar{
@@ -191,6 +200,10 @@ header{
   margin:0 .5rem;
 }
 
+.beranda .kontrol .vid-btn.active{
+  background:#009DAE;
+}
+
 .book .row{
   display: flex;
   flex-wrap: wrap;
@@ -199,7 +212,7 @@ header{
 .book .row .fa-plane-circle-check{
   flex: 1 1 40rem;
   font-size: 500px;
-  color: #FFE652;
+  color: #1EA2B2;
 }
 
 .book .row form{
@@ -304,6 +317,15 @@ header{
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
+}
+
+.review .box h3{
+  font-size: 2.5rem;
+  color:#333;
+}
+
+.review .box p{
+  font-size: 1.5rem;
 }
 
 .kontak .row{
@@ -426,6 +448,27 @@ header{
 @media (max-width:768px){
   #menu{
     display: initial;
+  }
+
+  header .navbar{
+    position: absolute;
+    top: 100%;right: 0;left: 0;
+    background: #009DAE;
+    border-top: .1rem solid;
+    padding:1rem 2rem;
+    clip-path:polygon(0 0,100% 0,100% 0,0 0);
+  }
+
+  header .navbar.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  header .navbar a{
+    display: block;
+    border-radius: .5rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    background:#009DAE;
   }
 }
 
